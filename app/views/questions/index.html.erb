@@ -1,0 +1,11 @@
+<h1>CRACK OVERFLOW : Ask a Joke, Get an Punchline - Crack Up! </h1>
+
+<ul>
+  <% @questions.each do |question| %>
+    <li><%= link_to question.content, question_path(question) %></li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= link_to "New Question", new_question_path %>
