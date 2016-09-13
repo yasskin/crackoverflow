@@ -4,7 +4,7 @@ class CreateAnswers < ActiveRecord::Migration[5.0]
       t.string :response
       t.integer :user_id
       t.integer :question_id
-      t.boolean :selected
+      t.boolean :selected, :default => false
 
       t.timestamps
     end
