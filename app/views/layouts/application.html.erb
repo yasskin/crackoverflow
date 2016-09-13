@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Crackoverflow</title>
+    <title>Crack Overflow</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+    <div class="navbar">
+      <li> <a href="/">Home</a> </li>
+      <% if session[:user_id] %>
+      <li> <%= link_to "Log Out", session_path(0),
+                :data => {:method => "delete"}%>
+      </li>
+      <% else %>
+        <li><%= link_to "Log In", new_session_path %></li>
+      <% end %>
+    </div>
   <body>
     <p class="navbar-text pull-right">
 
